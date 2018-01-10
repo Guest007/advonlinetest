@@ -9,13 +9,6 @@ def logout(request):
     return http.HttpResponseRedirect('/')
 
 
-@decorators.oauth_required
-def get_profile_required(request):
-    resp, content = request.oauth.http.request(
-        'https://www.googleapis.com/plus/v1/people/me')
-    return http.HttpResponse(content)
-
-
 @decorators.oauth_enabled
 def index(request):
     if request.oauth.has_credentials():
