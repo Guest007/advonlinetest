@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>Name: {{ credentials.name }}</p>
+<p>Email: {{ credentials.email }}</p>
+{% if credentials.picture %}<p>Avatar: <img src='{{ credentials.picture }}'></p>{% endif %}
+<a href="/logout">Logout</a>
+
+{% endblock %}
